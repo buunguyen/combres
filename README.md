@@ -117,3 +117,10 @@ Change Log
 * Fix [5460](http://combres.codeplex.com/workitem/5460)
 * Use default minifier if minifierRef, jsMinifierRef, cssMinifierRef is not specified
 * Support `auto` mode for `debugEnabled` (to use `debug` setting from `web.config`)
+
+
+Author
+---------------
+Email: [buunguyen@gmail.com](mailto:buunguyen@gmail.com)
+Blog: (www.buunguyen.net)
+Twitter: [@buunguyen](https://twitter.com/buunguyen)
