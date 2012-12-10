@@ -22,6 +22,8 @@ Install from [NuGet](https://www.nuget.org/packages/combres)
 
 ```
 PM> Install-Package combres
+PM> Install-Package combres.log4net (optional)
+PM> Install-Package combres.mvc (optional)
 ```
 
 Optional steps for ASP.NET 3.5 users, those using ASP.NET 4 or above can ignore:  
