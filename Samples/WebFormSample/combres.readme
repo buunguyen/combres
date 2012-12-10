@@ -1,0 +1,35 @@
+**** Change Log
+2.2.2.7
+- Built with dotLess 1.3.1.0
+- Move Log4Net logger implementation to separate Combres.Log4Net package
+	+ NuGet Combres.Log4Net
+	+ Add this attribute the combres element: logProvider="Combres.Log4Net.Log4NetLogger, Combres.Log4Net"
+
+**** Instructions
+Note: Combres NuGet installer has already made the following changes to your project:
+- Configure Combres in web.config
+- Register Combres route (see the generated AppStart_Combres.cs)
+- Skeleton App_Data/combres.xml
+- App_Data/combres_full_with_annotation.xml for referencing purpose, it is NOT used by Combres at all
+
+Follow these steps to finish configuration
+1. This step is only necessary for ASP.NET 3.5 users.  ASP.NET 4.0 users can skip to step #2.  This step is necessary because there's currently no way to generate/transform/reference different code/config/assemblies for different runtimes.  
+    Delete the generated file AppStart_Combres.cs
+    Remove the reference to the assembly WebActivator
+    Open global.asax code-behind file:
+    a. Import Combres namespace (i.e. using Combres)
+    b. Add this to the first line of either RegisterRoutes() or Application_Start(): RouteTable.Routes.AddCombresRoute("Combres")
+    
+2. Edit App_Data/Combres.xml to include your JS and CSS resources
+
+3. Put these in pages which need CSS/JS, e.g. master page.
+    <%= WebExtensions.CombresLink("siteCss") %>  
+    <%= WebExtensions.CombresLink("siteJs") %>
+    Notes:
+    a. Change the values of the arguments to match the names you use in Combres.xml
+    b. If you use ASP.NET MVC, you can replace WebExtensions with Html or Url (you need to import Combres.Mvc namespace)
+    c. If you use Razor view engine, you need to add @using Combres or @using Combres.Mvc explicitly (if you want to configure in web.config, read this post: http://stackoverflow.com/questions/3875207/how-to-add-extra-namespaces-to-razor-pages-instead-of-using-declaration/3876409#3876409)
+	
+4. (optional: follow this step only if you use the Google Local-Closure minifier) Download compiler.jar from http://closure-compiler.googlecode.com/files/compiler-latest.zip and copy it to the bin folder of your application
+
+That should be it.  Start your browser and view source to observe Combres in action.  For more advanced scenarios, refer to the Combres' documentation (http://combres.codeplex.com/documentation).

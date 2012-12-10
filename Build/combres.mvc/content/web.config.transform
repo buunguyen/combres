@@ -1,0 +1,9 @@
+<configuration>
+  <system.web>
+    <pages>
+      <namespaces>
+        <add namespace ="Combres.Mvc" />
+      </namespaces>
+    </pages>  
+  </system.web>
+</configuration>

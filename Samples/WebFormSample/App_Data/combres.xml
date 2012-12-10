@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  This file contains basic settings needed for most web apps.
+  For full Combres settings (with explanation), refer to the sample definition file: 
+    Samples\Sample Data Files\combres_full_with_annotation.xml
+-->
+<combres xmlns='urn:combres'>
+  <filters>
+    <filter type="Combres.Filters.FixUrlsInCssFilter, Combres" />
+    <filter type="Combres.Filters.DotLessCssFilter, Combres" acceptedResourceSets="dotLessCss" />
+  </filters>
+  <resourceSets url="~/combres.axd"
+                defaultDuration="30"
+                defaultVersion="auto"
+                defaultDebugEnabled="false"
+                defaultIgnorePipelineWhenDebug="false"
+                localChangeMonitorInterval="30"
+                remoteChangeMonitorInterval="60"
+                >
+    <resourceSet name="siteCss" type="css" >
+      <resource path="~/content/site.css" />
+      <resource path="~/content/jquery-ui-1.7.2.custom.css" />
+    </resourceSet>
+    <resourceSet name="dotLessCss" type="css" >
+      <resource path="~/content/dotLess.css" />
+    </resourceSet>
+    <resourceSet name="siteJs" type="js">
+      <resource path="~/scripts/jquery-1.3.2.js" />
+      <resource path="~/scripts/jquery-ui-1.7.2.custom.min.js" />
+    </resourceSet>
+  </resourceSets>
+</combres>

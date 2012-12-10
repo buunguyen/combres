@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Combres.Log4Net</name>
+    </assembly>
+    <members>
+        <member name="T:Combres.Log4Net.Log4NetLogger">
+            <summary>
+            Log4Net-based logger implementation.
+            </summary>
+        </member>
+        <member name="M:Combres.Log4Net.Log4NetLogger.InitializeLoggerType">
+            <summary>
+            Callback method that is invoked once for all instances for this logger type.
+            </summary>
+        </member>
+        <member name="M:Combres.Log4Net.Log4NetLogger.#ctor(System.String)">
+            <summary>
+            Callback constructor that is used by <see cref="T:Combres.LoggerFactory"/>.
+            </summary>
+        </member>
+    </members>
+</doc>

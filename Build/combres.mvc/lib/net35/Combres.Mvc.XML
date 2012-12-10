@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Combres.Mvc</name>
+    </assembly>
+    <members>
+        <member name="T:Combres.Mvc.MvcExtensions">
+            <summary>
+            Utility class providing extension methods for ASP.NET MVC applications to
+            work with the library.
+            </summary>
+        </member>
+        <member name="M:Combres.Mvc.MvcExtensions.CombresUrl(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Forwards the call to <see cref="M:Combres.WebExtensions.CombresUrl(System.String)"/>.
+            </summary>
+        </member>
+        <member name="M:Combres.Mvc.MvcExtensions.CombresUrl(System.Web.Mvc.UrlHelper,System.String)">
+            <summary>
+            Forwards the call to <see cref="M:Combres.WebExtensions.CombresUrl(System.String)"/>.
+            </summary>
+        </member>
+        <member name="M:Combres.Mvc.MvcExtensions.CombresLink(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Forwards the call to <see cref="M:Combres.WebExtensions.CombresLink(System.String)"/>.
+            </summary>
+        </member>
+        <member name="M:Combres.Mvc.MvcExtensions.CombresLink(System.Web.Mvc.UrlHelper,System.String)">
+            <summary>
+            Forwards the call to <see cref="M:Combres.WebExtensions.CombresLink(System.String)"/>.
+            </summary>
+        </member>
+        <member name="M:Combres.Mvc.MvcExtensions.CombresLink(System.Web.Mvc.HtmlHelper,System.String,System.Object)">
+            <summary>
+            Forwards the call to <see cref="M:Combres.WebExtensions.CombresLink(System.String,System.Object)"/>.
+            </summary>
+        </member>
+        <member name="M:Combres.Mvc.MvcExtensions.CombresLink(System.Web.Mvc.UrlHelper,System.String,System.Object)">
+            <summary>
+            Forwards the call to <see cref="M:Combres.WebExtensions.CombresLink(System.String,System.Object)"/>.
+            </summary>
+        </member>
+        <member name="M:Combres.Mvc.MvcExtensions.EnableClientUrls(System.Web.Mvc.HtmlHelper,System.String[])">
+            <summary>
+            Forwards the call to <see cref="M:Combres.WebExtensions.EnableClientUrls(System.String[])"/>.
+            </summary>
+        </member>
+        <member name="M:Combres.Mvc.MvcExtensions.EnableClientUrls(System.Web.Mvc.UrlHelper,System.String[])">
+            <summary>
+            Forwards the call to <see cref="M:Combres.WebExtensions.EnableClientUrls(System.String[])"/>.
+            </summary>
+        </member>
+    </members>
+</doc>

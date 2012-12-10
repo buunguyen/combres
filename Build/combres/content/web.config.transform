@@ -1,0 +1,16 @@
+<configuration>
+  <configSections>
+    <section name="combres" type="Combres.ConfigSectionSetting, Combres, Version=2.2, Culture=neutral, PublicKeyToken=1ca6b37997dd7536"/>
+  </configSections>  
+  <combres definitionUrl="~/App_Data/combres.xml" />
+  <appSettings>
+	<add key="CombresSectionName" value="combres"/>
+  </appSettings>
+  <system.web>
+    <pages>
+      <namespaces>
+        <add namespace ="Combres" />
+      </namespaces>
+    </pages>  
+ </system.web>
+</configuration>

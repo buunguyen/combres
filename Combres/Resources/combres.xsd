@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="combres" elementFormDefault="qualified" 
+           targetNamespace='urn:combres' xmlns='urn:combres'
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!-- combres -->
+  <xs:element name="combres">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="filters" type="filtersinfo" minOccurs="0" maxOccurs="1" />
+        <xs:element name="cacheVaryProviders" type="cacheprovidersinfo" minOccurs="0" maxOccurs="1" />
+        <xs:element name="cssMinifiers" type="minifiersinfo" minOccurs="0" maxOccurs="1" />
+        <xs:element name="jsMinifiers" type="minifiersinfo" minOccurs="0" maxOccurs="1" />
+        <xs:element name="resourceSets" type="resourcesetsinfo" minOccurs="1" maxOccurs="1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <!-- minifiers -->
+  <xs:complexType name="minifiersinfo">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="minifier" type="minifierinfo" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- minifier -->
+  <xs:complexType name="minifierinfo">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="param" type="paraminfo" />
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required" />
+    <xs:attribute name="type" type="xs:string" use="required" />
+    <xs:attribute name="binderType" type="xs:string" />
+  </xs:complexType>
+  
+  <!-- param -->
+  <xs:complexType name="paraminfo">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="param" type="paraminfo" />
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required" />
+    <xs:attribute name="type" type="xs:string" />
+    <xs:attribute name="value" type="xs:string" />
+  </xs:complexType>
+  
+  <!-- filters -->
+  <xs:complexType name="filtersinfo">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="filter" type="filterinfo" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!-- filter -->
+  <xs:complexType name="filterinfo">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="param" type="paraminfo" />
+    </xs:sequence>
+    <xs:attribute name="type" type="xs:string" use="required" />
+    <xs:attribute name="binderType" type="xs:string" />
+    <xs:attribute name="acceptedResourceSets" type="xs:string" />
+  </xs:complexType>
+
+  <!-- cache vary providers -->
+  <xs:complexType name="cacheprovidersinfo">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="provider" type="cacheproviderinfo" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- cache vary provider -->
+  <xs:complexType name="cacheproviderinfo">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="param" type="paraminfo" />
+    </xs:sequence>
+    <xs:attribute name="type" type="xs:string" use="required" />
+    <xs:attribute name="binderType" type="xs:string" />
+    <xs:attribute name="acceptedResourceSets" type="xs:string" />
+  </xs:complexType>
+  
+  <!-- resourceSets -->
+  <xs:complexType name="resourcesetsinfo">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="resourceSet" type="resourcesetinfo" />
+    </xs:sequence>
+    <xs:attribute name="url" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="~/.+"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="host">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="(ht|f)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="sslHost">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="(ht|f)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="defaultDuration" type="xs:positiveInteger" />
+    <xs:attribute name="defaultVersion" type="xs:string" />
+    <xs:attribute name="defaultVersionGenerator" type="xs:string" />
+    <xs:attribute name="defaultDebugEnabled">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="true" />
+          <xs:enumeration value="false" />
+          <xs:enumeration value="auto" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="defaultIgnorePipelineWhenDebug" type="xs:boolean" />
+    <xs:attribute name="defaultCompressionEnabled" type="xs:boolean" />
+    <xs:attribute name="defaultCssMinifierRef" type="xs:string" />
+    <xs:attribute name="defaultJSMinifierRef" type="xs:string" />
+    <xs:attribute name="localChangeMonitorInterval" type="xs:integer" />
+    <xs:attribute name="remoteChangeMonitorInterval" type="xs:integer" />
+  </xs:complexType>
+  
+  <!-- resourceSet -->
+  <xs:complexType name="resourcesetinfo">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="resource" type="resourceinfo" />
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="required" />
+    <xs:attribute name="version" type="xs:string" />
+    <xs:attribute name="versionGenerator" type="xs:string" />
+    <xs:attribute name="duration" type="xs:positiveInteger" />
+    <xs:attribute name="debugEnabled">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="true" />
+          <xs:enumeration value="false" />
+          <xs:enumeration value="auto" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="ignorePipelineWhenDebug" type="xs:boolean" />
+    <xs:attribute name="compressionEnabled" type="xs:boolean" />
+    <xs:attribute name="minifierRef" type="xs:string" />
+    <xs:attribute name="type" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="js" />
+          <xs:enumeration value="css" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+  <!-- resource -->
+  <xs:complexType name="resourceinfo">
+    <xs:attribute name="path" type="xs:string" />
+    <xs:attribute name="reference" type="xs:string" />
+    <!-->xs:attribute name="folder" type="xs:string" />
+    <xs:attribute name="pattern" type="xs:string" />
+    <xs:attribute name="includeSubdirectories" type="xs:boolean" /-->
+    <xs:attribute name="mode">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[s|S]tatic|[d|D]ynamic"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="forwardCookie" type="xs:boolean" />
+    <xs:attribute name="minifierRef" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,15 @@
+2012-11-26 14:56:00,080 [9] DEBUG Combres.Configuration - Reload Combres settings
+2012-11-26 14:56:00,129 [9] DEBUG Combres.VersionGenerators.HashCodeVersionGenerator - Computing hash for set siteCss.  Current hash: 
+2012-11-26 14:56:00,132 [9] DEBUG Combres.ResourceContentReader - Retrieving new content for Resource '~/content/Site.css' (Mode: Static)
+2012-11-26 14:56:00,135 [9] DEBUG Combres.ResourceContentReader - Retrieving new content for Resource '~/content/themes/base/jquery-ui.css' (Mode: Static)
+2012-11-26 14:56:00,138 [9] DEBUG Combres.VersionGenerators.HashCodeVersionGenerator - New hash: 310340908
+2012-11-26 14:56:00,139 [9] DEBUG Combres.VersionGenerators.HashCodeVersionGenerator - Computing hash for set dotLessCss.  Current hash: 
+2012-11-26 14:56:00,139 [9] DEBUG Combres.ResourceContentReader - Retrieving new content for Resource '~/content/dotLess.less' (Mode: Static)
+2012-11-26 14:56:00,140 [9] DEBUG Combres.VersionGenerators.HashCodeVersionGenerator - New hash: 462299169
+2012-11-26 14:56:00,141 [9] DEBUG Combres.VersionGenerators.HashCodeVersionGenerator - Computing hash for set siteJs.  Current hash: 
+2012-11-26 14:56:00,141 [9] DEBUG Combres.ResourceContentReader - Retrieving new content for Resource '~/scripts/jquery-1.4.4.js' (Mode: Static)
+2012-11-26 14:56:00,146 [9] DEBUG Combres.ResourceContentReader - Retrieving new content for Resource '~/scripts/jquery-ui.js' (Mode: Static)
+2012-11-26 14:56:00,150 [9] DEBUG Combres.VersionGenerators.HashCodeVersionGenerator - New hash: 1312894718
+2012-11-26 14:56:00,151 [9] DEBUG Combres.ChangeMonitor - Watch new settings
+2012-11-26 14:56:00,195 [9] DEBUG Combres.Configuration - Elapsed time for 'ReloadSettings': 99 ms
+2012-11-26 14:56:00,206 [9] DEBUG Combres.ChangeMonitor - Dynamic resource change monitor thread starts...

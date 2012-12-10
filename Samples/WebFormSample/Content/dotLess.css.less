@@ -1,0 +1,67 @@
+﻿/**/ .rule1 {font-size: 4px;} /**/
+/**/ 
+.rule2 {font-size: 4px;} 
+/**/
+/* */
+/* comment */
+/* 
+
+comment 
+
+*/
+body {
+	font-size: 4px;
+}
+
+
+/** Variables **/
+@brand_color: #4D926F;
+ 
+#header {
+  color: @brand_color;
+}
+ 
+h2 {
+  color: @brand_color;
+}
+
+
+/** Mixins **/
+.rounded_corners {
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+ 
+#header {
+  .rounded_corners;
+}
+ 
+#footer {
+  .rounded_corners;
+}
+
+
+/** Operations **/
+@the-border: 1px;
+@base-color: #111;
+ 
+#header {
+  color: @base-color * 3;
+  border-left: @the-border;
+  border-right: @the-border * 2;
+}
+ 
+#footer { 
+  color: (@base-color + #111) * 1.5; 
+}
+
+
+/** Nested Rules **/
+#header {
+  color: red;
+  a { 
+       font-weight: bold; 
+       text-decoration: none; 
+    } 
+}

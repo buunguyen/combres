@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{A8F249BC-9E01-4D6E-B49F-532E3CFB243E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample Data Files", "Sample Data Files", "{49ECA334-881E-498C-8B78-9C665B0C8280}"
+	ProjectSection(SolutionItems) = preProject
+		Samples\Sample Data Files\combres_full_with_annotation.xml = Samples\Sample Data Files\combres_full_with_annotation.xml
+		Samples\Sample Data Files\combres_minimal.xml = Samples\Sample Data Files\combres_minimal.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Combres", "Combres\Combres.csproj", "{B9EC5D40-2603-4134-959D-17F97E03C2E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormSample", "Samples\WebFormSample\WebFormSample.csproj", "{8B393781-16B2-462D-892B-539FABF3463A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSample", "Samples\MvcSample\MvcSample.csproj", "{FBE923C2-EFA5-4139-9C57-3B82632A525E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Combres.Mvc", "Combres.Mvc\Combres.Mvc.csproj", "{DBB7F80D-74EB-48A0-8E67-EB17EB0B2D06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleCommon", "Samples\SampleCommon\SampleCommon.csproj", "{295304C9-5C9A-4139-BE41-54EFEAC67DFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Combres.Log4Net", "Combres.Log4Net\Combres.Log4Net.csproj", "{0EEFB780-E771-46E7-9285-797D9D692940}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9EC5D40-2603-4134-959D-17F97E03C2E9}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{B9EC5D40-2603-4134-959D-17F97E03C2E9}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{B9EC5D40-2603-4134-959D-17F97E03C2E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9EC5D40-2603-4134-959D-17F97E03C2E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B393781-16B2-462D-892B-539FABF3463A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B393781-16B2-462D-892B-539FABF3463A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B393781-16B2-462D-892B-539FABF3463A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B393781-16B2-462D-892B-539FABF3463A}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{FBE923C2-EFA5-4139-9C57-3B82632A525E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBE923C2-EFA5-4139-9C57-3B82632A525E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBE923C2-EFA5-4139-9C57-3B82632A525E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBE923C2-EFA5-4139-9C57-3B82632A525E}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{DBB7F80D-74EB-48A0-8E67-EB17EB0B2D06}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{DBB7F80D-74EB-48A0-8E67-EB17EB0B2D06}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{DBB7F80D-74EB-48A0-8E67-EB17EB0B2D06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBB7F80D-74EB-48A0-8E67-EB17EB0B2D06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{295304C9-5C9A-4139-BE41-54EFEAC67DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{295304C9-5C9A-4139-BE41-54EFEAC67DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{295304C9-5C9A-4139-BE41-54EFEAC67DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{295304C9-5C9A-4139-BE41-54EFEAC67DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EEFB780-E771-46E7-9285-797D9D692940}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{0EEFB780-E771-46E7-9285-797D9D692940}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{0EEFB780-E771-46E7-9285-797D9D692940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EEFB780-E771-46E7-9285-797D9D692940}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{49ECA334-881E-498C-8B78-9C665B0C8280} = {A8F249BC-9E01-4D6E-B49F-532E3CFB243E}
+		{8B393781-16B2-462D-892B-539FABF3463A} = {A8F249BC-9E01-4D6E-B49F-532E3CFB243E}
+		{FBE923C2-EFA5-4139-9C57-3B82632A525E} = {A8F249BC-9E01-4D6E-B49F-532E3CFB243E}
+		{295304C9-5C9A-4139-BE41-54EFEAC67DFE} = {A8F249BC-9E01-4D6E-B49F-532E3CFB243E}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

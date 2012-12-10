@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<combres xmlns='urn:combres'>
+  <!--
+    (Optional)
+    Description: 
+    + Declare all filter types in this section
+    + For each filter, fully qualified type name must be specified
+    + Checkout the documentation of each filter to know what it does
+  -->
+  <filters>
+    <!--
+      acceptedResourceSets: optional, semicolon-separated list of resource set names.  
+      + If specified: the filter is applied to only the selected resource sets
+        - The filter still has a chance to decide not to apply itself to this resource set
+          if the resource set doesn't contain the right resource type (i.e. CSS or JS)
+      + If not specified: the filter is applied to all resource sets
+    -->
+    <filter type="Combres.Filters.FixUrlsInCssFilter, Combres" acceptedResourceSets="siteCss" />
+    <filter type="Combres.Filters.HandleCssVariablesFilter, Combres" />
+    <filter type="Combres.Filters.DotLessCssFilter, Combres" />
+  </filters>
+
+  <!--
+    (Optional)
+    Description: 
+    + Declare all cache vary providers
+  -->
+  <cacheVaryProviders>
+    <provider type="LanguageCacheVaryProvider, SampleCommon.LanguageCacheVaryProvider">
+      <param name="SessionKey" type="string" value="language" />
+    </provider>
+    <provider type="Provider2, Assembly2" acceptedResourceSets="siteCss" />
+  </cacheVaryProviders>
+  
+  <!--
+    (Optional)
+    Description: 
+    + Declare all CSS minifier types in this section
+    + For each minifier, fully qualified type name must be specified
+    + Each minifier may have configuration settings (specific for each minifier type)
+      Check out the documentation of each minifier to know what configuration settings it supports
+  -->
+  <cssMinifiers>
+    <minifier name="yui" type="Combres.Minifiers.YuiCssMinifier, Combres">
+      <param name="CssCompressionType" type="string" value="StockYuiCompressor" />
+      <param name="RemoveComments" type="bool" value="true" />
+      <param name="ColumnWidth" type="int" value="-1" />
+    </minifier>
+    <minifier name="msajax" type="Combres.Minifiers.MSAjaxCssMinifier, Combres">
+      <param name="OutputMode" type="string" value="SingleLine" />
+      <param name="MinifyExpressions" type="bool" value="true" />
+    </minifier>
+  </cssMinifiers>
+  
+  <!--
+    (Optional)
+    Description: 
+    + Declare all JavaScript minifier types in this section
+    + For each minifier, fully qualified type name must be specified
+    + Each minifier may have configuration settings (specific for each minifier type)
+      Check out the documentation of each minifier to know what configuration settings it supports
+    + By default, the SimpleObjectBinder is used to bind the parameters to actual properties
+      of the minifiers.  You can replace this default binder with your own implementation by 
+      specify the fully-qualified class name in the binderType attribute.
+  -->  
+  <jsMinifiers>
+    <minifier name="yui" type="Combres.Minifiers.YuiJSMinifier, Combres">
+      <param name="IsVerboseLogging" type="bool" value="false" />
+      <param name="IsObfuscateJavascript" type="bool" value="true" />
+      <param name="PreserveAllSemicolons" type="bool" value="false" />
+      <param name="DisableOptimizations" type="bool" value="false" />
+      <param name="LineBreakPosition" type="int" value="-1" />
+    </minifier>
+    <minifier name="msajax" type="Combres.Minifiers.MSAjaxJSMinifier, Combres" binderType="Combres.Binders.SimpleObjectBinder, Combres">
+      <param name="CollapseToLiteral" type="bool" value="true" />
+      <param name="MacSafariQuirks" type="bool" value="true" />
+      <param name="LocalRenaming" type="string" value="CrunchAll" />
+      <param name="OutputMode" type="string" value="SingleLine" />
+      <param name="RemoveUnneededCode" type="bool" value="true" />
+      <param name="StripDebugStatements" type="bool" value="true" />
+    </minifier>
+    <minifier name="closure" type="Combres.Minifiers.ClosureJSMinifier, Combres">
+      <param name="ApiUrl" type="string" value="http://closure-compiler.appspot.com/compile" />
+      <param name="CompilationLevel" type="string" value="ADVANCED_OPTIMIZATIONS" />
+    </minifier>
+    <!-- To use this minifier, make sure:
+         - You have the JRE installed in target machine
+         - Copy compiler.jar (in Libraries folder) into the bin folder of your application 
+    -->
+    <minifier name="local-closure" type="Combres.Minifiers.LocalClosureJSMinifier, Combres">
+      <param name="JavaExePath" type="string" value="" />
+      <param name="CompilationLevel" type="string" value="BASIC_OPTIMIZATIONS" />
+    </minifier>
+  </jsMinifiers>
+
+  <!-- 
+    * url (required):
+      - Data type: string
+      - Description:
+        + Used to generate the link to Combres engine (which returns the combined/minified/compressed content)
+    * host (optional);
+      - Data type: URL
+      - Description:
+        + The host from where Combres resource sets should be requested. Essentially the host will be 
+          combined with the processed <url> field to form an absolute URL for requested resource sets. 
+          The existence of this field doesn't imply Combres resources are remote or local.  
+          Instead, it's used to explicitly control the generated URL of Combres, which will be useful in 
+          multiple sub-domains or host headers configurations. See http://combres.codeplex.com/discussions/235498
+          to understand more about the nature of this field.
+    * sslHost (optional);
+      - Data type: URL
+      - Description:
+        + Will be used in place of 'host' if Request.IsSecureConnection is true
+    * defaultDuration (optional): 
+      - Data type: int
+      - Description: 
+        + Number of days the set is to be cached in browser & server
+        + Applied to resource set which doesn't have the duration specified
+    * defaultVersion (optional): 
+      - Data type: int|string
+      - Description:
+        + If 'auto': version is automatically generated by Combres based on the followings:
+          - Contents of all resources in the set
+          - All filters applied to the set
+          - The currently selected minifier
+          - Combres automatically detects changes to re-compute the auto-version
+        + Default version of resource sets
+        + Applied to resource set which doesn't have the version specified
+    * defaultVersionGenerator (optional):
+      - Data type: string
+      - Description:
+        + A fully-qualified type name of a version generator which is used
+          to generate version of a resource set if 'auto' mode is on.
+        + There are 2 built-in generators:
+          - Combres.VersionGenerators.DefaultVersionGenerator
+          - Combres.VersionGenerators.Sha512VersionGenerator
+        + If this attribute is omited, Combres.VersionGenerators.DefaultVersionGenerator is used
+    * defaultDebugEnabled (optional - default is 'false'): 
+      - Data type: 'auto'|bool
+      - Description:
+        + Default debugging status of resource sets
+        + Applied to resource set which doesn't have the debugEnabled specified
+        + If 'auto': use web.config's debugging status
+    * defaultIgnorePipelineWhenDebug (optional - default is 'false'):
+      - Data type: bool
+      - Description:
+        + Have no effect if debugEnabled is turned-off or CombresUrl() overload is used
+        + If true and debugEnabled is turned-on, Combres will generate script and link tags 
+        corresponding to each resource in the set.  The URL for each of these script and 
+        link tags are generated from the 'path' of the resource.  The whole Combres 
+        pipeline (together with any filter) is ignored completely.
+        + If false and debugEnabled is turned-on, the inherent
+        debug workflow of Combres is executed, which means combiner, filters and compressor will operate
+        on the resulted content.
+        + Applied to resource set which doesn't have the ignorePipelineWhenDebug specified 
+    * defaultCompressionEnabled (optional - default is 'true'): 
+      - Data type: bool
+      - Description:
+        + If 'true', compression is done based on browser's setting.  If 'false', no compression is performed.
+    * defaultCssMinifierRef (optional - default is 'default'): 
+      - Data type: string
+      - Description:
+        + Identify the default CSS minifier for resource sets
+        + Applied to resource set which doesn't have the cssMinifierRef specified
+        + If 'off': not perform any minification (useful when resources are already minified)
+        + If 'default': use the Combres' default minifier with default configurations
+        + Otherwise: must be a valid name of a minifier defined in the <cssMinifiers> element
+   * defaultJSMinifierRef (optional - default is 'default'): 
+      - Data type: string
+      - Description:
+        + Identify the default JavaScript minifier for resource sets
+        + Applied to resource set which doesn't have the jsMinifierRef specified
+        + If 'off': not perform any minification (useful when resources are already minified)
+        + If 'default': use the Combres' default minifier with default configurations
+        + Otherwise: must be a valid name of a minifier defined in the <jsMinifiers> element   
+   * localChangeMonitorInterval (optional):
+      - Data type: int
+      - Description:
+        + Applicable to resource sets whose version is 'auto' only
+        + Interval in seconds that Combres will monitor changes to local dynamic resources
+        + If not specified OR if value is '' or '0': disable monitoring
+   * remoteChangeMonitorInterval (optional):
+      - Same as localChangeMonitorInterval but for remote dynamic resources
+   * children: consist at least one <resourceSet> - there's no limit to the number of resource sets
+  -->
+  <resourceSets url="~/combres.axd" 
+                host="http://www.site.com"
+                sslHost="https://secure.site.com"
+                localChangeMonitorInterval="30"
+                remoteChangeMonitorInterval="120"
+                defaultDuration="30" 
+                defaultVersion="1"
+                defaultVersionGenerator="Combres.VersionGenerators.Sha512VersionGenerator"
+                defaultCssMinifierRef="off" 
+                defaultJSMinifierRef="off"
+                defaultDebugEnabled="auto"
+                defaultIgnorePipelineWhenDebug="true"
+                defaultCompressionEnabled="true"
+                >
+    <!--
+      * Description: 
+        - Each resource set represents a group of CSS or JavaScript resources which are to be combined, minified, compressed
+          and served together in one single HTTP request.
+      * name (required):
+        - Data type: string
+        - Description:
+          + The name of the resource set.  This name is used to generate the link to this resource set.
+      * type (required):
+        - Data type: 'js'|'css'
+      * version (optional): see resourceSets#defaultVersion
+      * versionGenerator (optional): see resourceSets#defaultVersionGenerator
+      * duration (optional): see resourceSets#defaultDuration  
+      * debugEnabled (optional): see resourceSets#defaultDebugEnabled 
+      * ignorePipelineWhenDebug (optional): see resourceSets#defaultIgnorePipelineWhenDebug
+      * compressionEnabled (optional): see resourceSets#defaultCompressionEnabled
+      * minifierRef (optional): see resourceSets#defaultCssMinifierRef or defaultJSMinifierRef
+    -->
+    <resourceSet name="siteCss" 
+                 type="css" 
+                 duration="15" 
+                 minifierRef="yui" 
+                 debugEnabled="false"
+                 ignorePipelineWhenDebug="true"
+                 compressionEnabled="true">
+      <!--
+        * Description: 
+          - Each resource represents a JavaScript or CSS file (or URL)
+        * path (required)
+          - Data type: string
+          - Description: 
+            * The partial path (must start with ~/) if located in the same web application
+            * Full URL if located in a different web application or server
+        * mode (optional)
+          - Data type: 'Static'|'Dynamic'
+          - Description:
+            * Static (default): resource is served directly from file system
+            * Dynamic: resource is served via an HTTP request (e.g. 
+              required when the resource is located in another server or if the resource is dynamically generated)
+        * forwardCookie (optional - applicable only when mode is Dynamic)
+          - Data type: bool
+          - Description:
+            * true: relay cookie to the destination URL
+            * false (default): not relay cookie to the destination URL
+        * minifierRef (optional): if not specified, use resourceSet#minifierRef
+      -->
+      <resource path="~/content/site.css" />
+      <resource path="~/content/jquery-ui-1.7.2.custom.css" />
+    </resourceSet>
+    <resourceSet name="siteJs" type="js" version="10" minifierRef="msajax" debugEnabled="false">
+      <resource path="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js" mode="dynamic" forwardCookie="false" />
+      <resource path="~/scripts/jquery-ui-1.7.2.custom.min.js" mode="static" minifierRef="yui" />
+    </resourceSet>
+  </resourceSets>
+</combres>

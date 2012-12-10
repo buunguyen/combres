@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<combres xmlns='urn:combres'>
+  <resourceSets url="~/combres.axd" defaultDuration="30" defaultVersion="11" defaultDebugEnabled="auto">
+    <resourceSet name="siteCss" type="css">
+      <resource path="~/content/site.css" />
+      <resource path="~/content/jquery-ui-1.7.2.custom.css" />
+    </resourceSet>
+    <resourceSet name="siteJs" type="js">
+      <resource path="~/scripts/jquery-1.3.2.js" />
+      <resource path="~/scripts/jquery-ui-1.7.2.custom.min.js" />
+    </resourceSet>
+  </resourceSets>
+</combres> 

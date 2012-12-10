@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B9EC5D40-2603-4134-959D-17F97E03C2E9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Combres</RootNamespace>
+    <AssemblyName>Combres</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Combres.snk</AssemblyOriginatorKeyFile>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Combres.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Combres.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release-Combine|AnyCPU' ">
+    <OutputPath>bin\Release-Combine\</OutputPath>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxMin, Version=4.77.4723.25298, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AjaxMin.4.77.4723.25304\lib\net35\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="dotless.Core, Version=1.3.1.0, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\dotless.1.3.1.0\lib\dotless.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EcmaScript.NET.modified, Version=0.1.1.0, Culture=neutral, PublicKeyToken=7d53ba4f537753a5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\YUICompressor.NET.1.7.1.0\lib\net35\EcmaScript.NET.modified.dll</HintPath>
+    </Reference>
+    <Reference Include="Fasterflect, Version=2.1.2.0, Culture=neutral, PublicKeyToken=38d18473284c1ca7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\fasterflect.2.1.2\lib\net35\Fasterflect.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Yahoo.Yui.Compressor, Version=1.7.1.0, Culture=neutral, PublicKeyToken=f8b4b81ec75097e2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\YUICompressor.NET.1.7.1.0\lib\net35\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\CacheVaryProvider\ICacheVaryProvider.cs" />
+    <Compile Include="API\CacheVaryProvider\CacheVaryState.cs" />
+    <Compile Include="API\CacheVaryProvider\ICacheVaryStateReceiver.cs" />
+    <Compile Include="API\Cache\IResourceSetCache.cs" />
+    <Compile Include="API\Control\Include.cs" />
+    <Compile Include="API\Filter\IContentFilter.cs" />
+    <Compile Include="API\Logger\ILogger.cs" />
+    <Compile Include="API\Logger\LoggerFactory.cs" />
+    <Compile Include="API\Minifier\IResourceMinifier.cs" />
+    <Compile Include="Common\Exceptions\CombresException.cs" />
+    <Compile Include="Common\Extensions\CompressionExtensions.cs" />
+    <Compile Include="Common\Extensions\HashExtensions.cs" />
+    <Compile Include="Common\Extensions\TypeExtensions.cs" />
+    <Compile Include="Common\Extensions\UrlExtensions.cs" />
+    <Compile Include="Common\Extensions\XLinqExtensions.cs" />
+    <Compile Include="Common\Lock\ILock.cs" />
+    <Compile Include="Common\Lock\MonitorLock.cs" />
+    <Compile Include="Common\Lock\LockPolicy.cs" />
+    <Compile Include="Common\Lock\ReadWriteLock.cs" />
+    <Compile Include="Common\Lock\LockFactory.cs" />
+    <Compile Include="Common\SchemaConstants.cs" />
+    <Compile Include="Common\Timer.cs" />
+    <Compile Include="Common\Utils.cs" />
+    <Compile Include="Configuration\ChangeMonitor.cs" />
+    <Compile Include="Configuration\ChangeDetectedEvent.cs" />
+    <Compile Include="Engine\Caches\AspNetResourceSetCache.cs" />
+    <Compile Include="Engine\Compressors\DeflateCompressor.cs" />
+    <Compile Include="Engine\Compressors\GZipCompressor.cs" />
+    <Compile Include="Engine\Compressors\ICompressor.cs" />
+    <Compile Include="Engine\Compressors\NullCompressor.cs" />
+    <Compile Include="Engine\Filters\DotLessCssCombineFilter.cs" />
+    <Compile Include="Engine\Filters\DotLessCssFilter.cs" />
+    <Compile Include="Engine\GlobalSettings.cs" />
+    <Compile Include="Engine\Loggers\IgnoreLogger.cs" />
+    <Compile Include="Engine\Minifiers\ClosureCodeRequest.cs" />
+    <Compile Include="Engine\Minifiers\LocalClosureJSMinifier.cs" />
+    <Compile Include="Engine\Minifiers\MSAjaxCssMinifier.cs" />
+    <Compile Include="Engine\Model\CacheVaryProviderInfo.cs" />
+    <Compile Include="Engine\Model\ReadOnlyDictionary.cs" />
+    <Compile Include="Engine\DebugProcessingWorkflow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\DefaultProcessingWorkflow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Engine\IProcessingWorkflow.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="API\Filter\ICombinedContentFilter.cs" />
+    <Compile Include="API\Filter\ICompressedContentFilter.cs" />
+    <Compile Include="API\Filter\IMinifiedContentFilter.cs" />
+    <Compile Include="API\Filter\ISingleContentFilter.cs" />
+    <Compile Include="Configuration\ConfigSectionSetting.cs" />
+    <Compile Include="Configuration\Configuration.cs" />
+    <Compile Include="Engine\Filters\FixUrlsInCssFilter.cs" />
+    <Compile Include="Engine\Filters\HandleCssVariablesFilter.cs" />
+    <Compile Include="API\Binder\IObjectBinder.cs" />
+    <Compile Include="Engine\Minifiers\ClosureJSMinifier.cs" />
+    <Compile Include="Engine\Minifiers\MSAjaxJSMinifier.cs" />
+    <Compile Include="Engine\Binders\SimpleObjectBinder.cs" />
+    <Compile Include="Engine\Minifiers\NullMinifier.cs" />
+    <Compile Include="Engine\Minifiers\YuiCssMinifier.cs" />
+    <Compile Include="Engine\Minifiers\YuiJSMinifier.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Engine\ResourceContentReader.cs" />
+    <Compile Include="Engine\Model\Default.cs" />
+    <Compile Include="Engine\Model\FilterInfo.cs" />
+    <Compile Include="Engine\Model\ModelUtils.cs" />
+    <Compile Include="Engine\VersionGenerators\HashCodeVersionGenerator.cs" />
+    <Compile Include="API\VersionGenerator\IVersionGenerator.cs" />
+    <Compile Include="Engine\VersionGenerators\Sha512VersionGenerator.cs" />
+    <Compile Include="Engine\Model\MinifierInfo.cs" />
+    <Compile Include="Engine\Model\ResourceMode.cs" />
+    <Compile Include="Configuration\ConfigReader.cs" />
+    <Compile Include="Engine\Model\Resource.cs" />
+    <Compile Include="Engine\Model\ResourceType.cs" />
+    <Compile Include="Engine\Model\ResourceSet.cs" />
+    <Compile Include="Engine\Model\Settings.cs" />
+    <Compile Include="API\WebExtensions.cs" />
+    <Compile Include="Common\Exceptions\ResourceNotFoundException.cs" />
+    <Compile Include="Common\Exceptions\ResourceSetNotFoundException.cs" />
+    <Compile Include="API\CombresRouteHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="API\CombresHandler.cs" />
+    <Compile Include="Engine\RequestProcessor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\combres.xsd">
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Combres.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

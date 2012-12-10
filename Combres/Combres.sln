@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Combres", "Combres.csproj", "{B9EC5D40-2603-4134-959D-17F97E03C2E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{A8F249BC-9E01-4D6E-B49F-532E3CFB243E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormSample", "..\Samples\WebFormSample\WebFormSample.csproj", "{8B393781-16B2-462D-892B-539FABF3463A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcSample", "..\Samples\MvcSample\MvcSample.csproj", "{7B9B244C-EBE6-49F7-AFC9-5F43E4639CC5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{3BD1B340-4F92-4AC2-8B1B-9818536BDB0F}"
+	ProjectSection(SolutionItems) = preProject
+		..\Libraries\ajaxmin.dll = ..\Libraries\ajaxmin.dll
+		..\Libraries\compiler.copying = ..\Libraries\compiler.copying
+		..\Libraries\compiler.jar = ..\Libraries\compiler.jar
+		..\Libraries\compiler.readme = ..\Libraries\compiler.readme
+		..\Libraries\dotless.Core.dll = ..\Libraries\dotless.Core.dll
+		..\Libraries\EcmaScript.NET.modified.dll = ..\Libraries\EcmaScript.NET.modified.dll
+		..\Libraries\Fasterflect.dll = ..\Libraries\Fasterflect.dll
+		..\Libraries\Fasterflect.XML = ..\Libraries\Fasterflect.XML
+		..\Libraries\log4net.dll = ..\Libraries\log4net.dll
+		..\Libraries\Yahoo.Yui.Compressor.dll = ..\Libraries\Yahoo.Yui.Compressor.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample Data Files", "Sample Data Files", "{96E18C58-028D-4484-BA5C-901F1920B93D}"
+	ProjectSection(SolutionItems) = preProject
+		..\Sample Data Files\combres_full_with_annotation.xml = ..\Sample Data Files\combres_full_with_annotation.xml
+		..\Sample Data Files\combres_minimal.xml = ..\Sample Data Files\combres_minimal.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Help", "Help", "{EE11746B-BD04-4BB9-89C7-508CB593EB59}"
+	ProjectSection(SolutionItems) = preProject
+		readme.txt = readme.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Combres.Mvc", "..\Combres.Mvc\Combres.Mvc.csproj", "{DBB7F80D-74EB-48A0-8E67-EB17EB0B2D06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleCommon", "..\SampleCommon\SampleCommon.csproj", "{295304C9-5C9A-4139-BE41-54EFEAC67DFE}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9EC5D40-2603-4134-959D-17F97E03C2E9}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{B9EC5D40-2603-4134-959D-17F97E03C2E9}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{B9EC5D40-2603-4134-959D-17F97E03C2E9}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9EC5D40-2603-4134-959D-17F97E03C2E9}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{8B393781-16B2-462D-892B-539FABF3463A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B393781-16B2-462D-892B-539FABF3463A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B393781-16B2-462D-892B-539FABF3463A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B393781-16B2-462D-892B-539FABF3463A}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{7B9B244C-EBE6-49F7-AFC9-5F43E4639CC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B9B244C-EBE6-49F7-AFC9-5F43E4639CC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B9B244C-EBE6-49F7-AFC9-5F43E4639CC5}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B9B244C-EBE6-49F7-AFC9-5F43E4639CC5}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{DBB7F80D-74EB-48A0-8E67-EB17EB0B2D06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBB7F80D-74EB-48A0-8E67-EB17EB0B2D06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBB7F80D-74EB-48A0-8E67-EB17EB0B2D06}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBB7F80D-74EB-48A0-8E67-EB17EB0B2D06}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{295304C9-5C9A-4139-BE41-54EFEAC67DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{295304C9-5C9A-4139-BE41-54EFEAC67DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{295304C9-5C9A-4139-BE41-54EFEAC67DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{295304C9-5C9A-4139-BE41-54EFEAC67DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8B393781-16B2-462D-892B-539FABF3463A} = {A8F249BC-9E01-4D6E-B49F-532E3CFB243E}
+		{7B9B244C-EBE6-49F7-AFC9-5F43E4639CC5} = {A8F249BC-9E01-4D6E-B49F-532E3CFB243E}
+		{295304C9-5C9A-4139-BE41-54EFEAC67DFE} = {A8F249BC-9E01-4D6E-B49F-532E3CFB243E}
+	EndGlobalSection
+EndGlobal
