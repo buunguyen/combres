@@ -121,6 +121,6 @@ Change Log
 
 Author
 ---------------
-Email: [buunguyen@gmail.com](mailto:buunguyen@gmail.com)
-Blog: (www.buunguyen.net)
-Twitter: [@buunguyen](https://twitter.com/buunguyen)
+Email: [buunguyen@gmail.com](mailto:buunguyen@gmail.com)  
+Blog: (www.buunguyen.net)  
+Twitter: [@buunguyen](https://twitter.com/buunguyen)  
