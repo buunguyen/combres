@@ -4,7 +4,7 @@ Combres (previously hosted in [CodePlex](http://combres.codeplex.com/)) helps yo
 
 Features highlights:  
 
-* All in one solution supporting JS/CSS [combination](http://developer.yahoo.com/performance/rules.html#num_http), [minification](http://developer.yahoo.com/performance/rules.html#minify), [comression](http://developer.yahoo.com/performance/rules.html#gzip) and caching (by adding proper [Expires/Cache-Control](http://developer.yahoo.com/performance/rules.html#expires) headers, [ETag](http://developer.yahoo.com/performance/rules.html#etags) and server-side caching)
+* All in one solution supporting JS/CSS [combination](http://developer.yahoo.com/performance/rules.html#num_http), [minification](http://developer.yahoo.com/performance/rules.html#minify), [compression](http://developer.yahoo.com/performance/rules.html#gzip) and caching (by adding proper [Expires/Cache-Control](http://developer.yahoo.com/performance/rules.html#expires) headers, [ETag](http://developer.yahoo.com/performance/rules.html#etags) and server-side caching)
 * Easy to use, simply download it via Nuget, declare JS and CSS resource groups in an XML file and use them in your pages, Combres will take care of the rest
 * Integrated with ASP.NET routing engine and work with ASP.NET WebForm 3.5/4.0/4.5, ASP.NET MVC 2/3/4 and Azure web applications
 * Detect changes in Combres config file, managed JS/CSS files and support auto-versioning, so you don't have to manually rebundle JS/CSS resources after making changes to them
