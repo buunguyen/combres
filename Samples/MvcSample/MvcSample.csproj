@@ -44,21 +44,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AjaxMin, Version=4.48.4489.28432, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
+    <Reference Include="AjaxMin, Version=4.84.4790.14405, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\AjaxMin.4.48.4489.28432\lib\net20\AjaxMin.dll</HintPath>
+      <HintPath>..\..\packages\AjaxMin.4.84.4790.14417\lib\net40\AjaxMin.dll</HintPath>
     </Reference>
-    <Reference Include="Combres, Version=2.2.2.14, Culture=neutral, PublicKeyToken=1ca6b37997dd7536, processorArchitecture=MSIL">
+    <Reference Include="Combres, Version=2.2.2.15, Culture=neutral, PublicKeyToken=1ca6b37997dd7536, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\combres.2.2.2.15\lib\net35\Combres.dll</HintPath>
+      <HintPath>..\..\packages\combres.2.2.2.16\lib\net35\Combres.dll</HintPath>
     </Reference>
     <Reference Include="Combres.Log4Net, Version=2.2.2.15, Culture=neutral, PublicKeyToken=1ca6b37997dd7536, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\combres.log4net.2.2.2.15\lib\net35\Combres.Log4Net.dll</HintPath>
+      <HintPath>..\..\packages\combres.log4net.2.2.2.16\lib\net35\Combres.Log4Net.dll</HintPath>
     </Reference>
     <Reference Include="Combres.Mvc, Version=2.2.2.15, Culture=neutral, PublicKeyToken=1ca6b37997dd7536, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\combres.mvc.2.2.2.15\lib\net35\Combres.Mvc.dll</HintPath>
+      <HintPath>..\..\packages\combres.mvc.2.2.2.16\lib\net35\Combres.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="dotless.Core, Version=1.3.1.0, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -68,9 +68,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\YUICompressor.NET.1.7.1.0\lib\net35\EcmaScript.NET.modified.dll</HintPath>
     </Reference>
-    <Reference Include="Fasterflect, Version=2.1.2.0, Culture=neutral, PublicKeyToken=38d18473284c1ca7, processorArchitecture=MSIL">
+    <Reference Include="Fasterflect, Version=2.1.0.8328, Culture=neutral, PublicKeyToken=38d18473284c1ca7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\fasterflect.2.1.2\lib\net40\Fasterflect.dll</HintPath>
+      <HintPath>..\..\packages\fasterflect.2.1.0\lib\net40\Fasterflect.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
