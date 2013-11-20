@@ -59,6 +59,13 @@ That should be it. Start your browser to observe Combres in action. For more adv
 
 Change Log
 ---------------
+2.2.2.18
+* Only support .NET 4.0 or above. .NET 3.5 users should use Combres 2.2.2.17.
+* Use Fasterflect 2.1.3
+
+2.2.2.17
+* Reverse to Fasterflect 2.1.0 to fix #6
+
 2.2.2.15
 * Fix issues [7675](http://combres.codeplex.com/workitem/7675), [7656](http://combres.codeplex.com/workitem/7656), [7673](http://combres.codeplex.com/workitem/7673), [7660](http://combres.codeplex.com/workitem/7660), [7654](http://combres.codeplex.com/workitem/7654)
 * Built with dotLess 1.3.1.0, Fasterflect 2.1.2, AjaxMin 4.48.4489.28432 and Log4Net 1.2
