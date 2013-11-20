@@ -1,33 +1,30 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
   This file contains basic settings needed for most web apps.
-  For full Combres settings (with explanation), refer to the sample definition file: 
-    Samples\Sample Data Files\combres_full_with_annotation.xml
+  For full Combres settings (with explanation), refer to the sample definition file: combres_full_with_annotation.xml
+  Also, refer to Combres' documentation: http://combres.codeplex.com/documentation	
 -->
 <combres xmlns='urn:combres'>
   <filters>
-    <filter type="Combres.Filters.FixUrlsInCssFilter, Combres" acceptedResourceSets="siteCss" />
-    <filter type="Combres.Filters.DotLessCssFilter, Combres" acceptedResourceSets="dotLessCss" />
+    <filter type="Combres.Filters.FixUrlsInCssFilter, Combres" />
   </filters>
   <resourceSets url="~/combres.axd"
-                defaultDuration="29"
+                defaultDuration="30"
                 defaultVersion="auto"
                 defaultDebugEnabled="false"
-                defaultIgnorePipelineWhenDebug="false"
-                defaultVersionGenerator="Combres.VersionGenerators.HashCodeVersionGenerator"
+                defaultIgnorePipelineWhenDebug="true"
                 localChangeMonitorInterval="30"
                 remoteChangeMonitorInterval="60"
                 >
     <resourceSet name="siteCss" type="css">
       <resource path="~/content/Site.css" />
-      <resource path="~/content/themes/base/jquery-ui.css" /> 
-    </resourceSet>
-    <resourceSet name="dotLessCss" type="css">
-      <resource path="~/content/dotLess.less" />
+      <resource path="~/content/anotherCss.css" />
+      <resource path="~/scripts/yetAnotherCss.css" />
     </resourceSet>
     <resourceSet name="siteJs" type="js">
       <resource path="~/scripts/jquery-1.4.4.js" />
-      <resource path="~/scripts/jquery-ui.js" />
+      <resource path="~/scripts/anotherJs.js" />
+      <resource path="~/scripts/yetAnotherJs.js" />
     </resourceSet>
   </resourceSets>
 </combres>

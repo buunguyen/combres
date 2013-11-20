@@ -21,8 +21,8 @@ goto END
 :NUGET
 NOTEPAD combres\Combres.nuspec
 echo *** Creating Combres NuGet package
-xcopy /y ..\Combres\bin\Release\Combres.dll combres\lib\net35\
-xcopy /y ..\Combres\bin\Release\Combres.xml combres\lib\net35\
+xcopy /y ..\Combres\bin\Release\Combres.dll combres\lib\net40\
+xcopy /y ..\Combres\bin\Release\Combres.xml combres\lib\net40\
 xcopy /y "..\Samples\Sample Data Files\combres_minimal.xml" combres\content\App_Data\
 xcopy /y "..\Samples\Sample Data Files\combres_full_with_annotation.xml" combres\content\App_Data\
 nuget pack combres\Combres.nuspec
@@ -30,15 +30,15 @@ if errorlevel 1 goto PACK_FAIL
 
 NOTEPAD combres.log4net\Combres.Log4Net.nuspec
 echo *** Creating Combres.Log4Net NuGet package
-xcopy /y ..\Combres.Log4Net\bin\Release\Combres.Log4Net.dll combres.log4net\lib\net35\
-xcopy /y ..\Combres.Log4Net\bin\Release\Combres.Log4Net.xml combres.log4net\lib\net35\
+xcopy /y ..\Combres.Log4Net\bin\Release\Combres.Log4Net.dll combres.log4net\lib\net40\
+xcopy /y ..\Combres.Log4Net\bin\Release\Combres.Log4Net.xml combres.log4net\lib\net40\
 nuget pack combres.log4net\Combres.Log4Net.nuspec
 if errorlevel 1 goto PACK_FAIL
 
 NOTEPAD combres.mvc\Combres.Mvc.nuspec
 echo *** Creating Combres.Mvc NuGet package
-xcopy /y ..\Combres.Mvc\bin\Release\Combres.Mvc.dll combres.mvc\lib\net35\
-xcopy /y ..\Combres.Mvc\bin\Release\Combres.Mvc.xml combres.mvc\lib\net35\
+xcopy /y ..\Combres.Mvc\bin\Release\Combres.Mvc.dll combres.mvc\lib\net40\
+xcopy /y ..\Combres.Mvc\bin\Release\Combres.Mvc.xml combres.mvc\lib\net40\
 nuget pack combres.mvc\Combres.Mvc.nuspec
 if errorlevel 1 goto PACK_FAIL
 
