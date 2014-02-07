@@ -134,3 +134,7 @@ Author
 Email: [buunguyen@gmail.com](mailto:buunguyen@gmail.com)  
 Blog: (www.buunguyen.net)  
 Twitter: [@buunguyen](https://twitter.com/buunguyen)  
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/buunguyen/combres/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
