@@ -279,7 +279,7 @@ namespace Combres
             {
                 var rs = resourceSets[i];
                 var url = GetResourceSetUrl(rs);
-                sb.Append(rs.Name).Append(":").Append("'").Append(url).Append("'");
+                sb.Append("'").Append(rs.Name).Append("'").Append(":").Append("'").Append(url).Append("'");
                 if (i < (resourceSets.Count - 1))
                     sb.Append(",");
             }
