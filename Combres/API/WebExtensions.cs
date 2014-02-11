@@ -225,14 +225,7 @@ namespace Combres
                         properties.Select(
                             prop => new KeyValuePair<string, string>(prop.Name, (string) prop.Get(attributes)));
                 }
-                pairs.ToList().ForEach(pair =>
-                                       attributeString
-                                           .Append(" ")
-                                           .Append(pair.Key)
-                                           .Append("=")
-                                           .Append("\"")
-                                           .Append(pair.Value)
-                                           .Append("\""));
+                pairs.ToList().ForEach(pair => attributeString.AppendFormat(" {0}=\"{1}\"", pair.Key, pair.Value));
             }
             var templateToUse = type == ResourceType.JS
                                     ? JsTemplate
@@ -279,7 +272,7 @@ namespace Combres
             {
                 var rs = resourceSets[i];
                 var url = GetResourceSetUrl(rs);
-                sb.Append("'").Append(rs.Name).Append("'").Append(":").Append("'").Append(url).Append("'");
+                sb.AppendFormat("'{0}':'{1}'", rs.Name, url);
                 if (i < (resourceSets.Count - 1))
                     sb.Append(",");
             }
