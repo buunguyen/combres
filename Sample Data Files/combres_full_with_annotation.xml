@@ -83,13 +83,25 @@
       <param name="ApiUrl" type="string" value="http://closure-compiler.appspot.com/compile" />
       <param name="CompilationLevel" type="string" value="ADVANCED_OPTIMIZATIONS" />
     </minifier>
-    <!-- To use this minifier, make sure:
-         - You have the JRE installed in target machine
-         - Copy compiler.jar (in Libraries folder) into the bin folder of your application 
+    <!-- 
+         * Description: 
+           - What is the Closure Compiler? : https://developers.google.com/closure/compiler/
+           - Download the application (compiler.jar): http://dl.google.com/closure-compiler/compiler-latest.zip
+           - Doc: https://developers.google.com/closure/compiler/docs/overview
+           - API: https://developers.google.com/closure/compiler/docs/gettingstarted_api
+           - Srouce: https://github.com/google/closure-compiler
+         * CompilationLevel (required): 
+           - Data type: WHITESPACE_ONLY | SIMPLE_OPTIMIZATIONS | ADVANCED_OPTIMIZATIONS 
+           - Description: 
+             + Check out this webpage for more information: https://developers.google.com/closure/compiler/docs/compilation_levels
+             + ADVANCED_OPTIMIZATIONS is generally not recommended.
+             + We do not recommend compiler code in the existing JS file
+             + The new JS file can do
+               - Because you must comply with the Google Closure Compiler specification
+               - Check out this webpage for more information: https://developers.google.com/closure/compiler/docs/api-tutorial3
     -->
     <minifier name="local-closure" type="Combres.Minifiers.LocalClosureJSMinifier, Combres">
-      <param name="JavaExePath" type="string" value="" />
-      <param name="CompilationLevel" type="string" value="BASIC_OPTIMIZATIONS" />
+      <param name="CompilationLevel" type="string" value="SIMPLE_OPTIMIZATIONS" />
     </minifier>
   </jsMinifiers>
 

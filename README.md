@@ -59,6 +59,14 @@ That should be it. Start your browser to observe Combres in action. For more adv
 
 Change Log
 ---------------
+2.3.0.1
+* Local of Google Closure Compiler support.
+* Use to the IKVM.
+* Compile compiler.jar for compiler.dll
+* JDK is no longer required.
+* Updated Use dotLess 1.4.1.0, AjaxMin 5.11.5295.12309 and Log4Net 2.0.3
+* Updated Build folder
+
 2.2.2.18
 * Only support .NET 4.0 or above. .NET 3.5 users should use Combres 2.2.2.17.
 * Use Fasterflect 2.1.3
