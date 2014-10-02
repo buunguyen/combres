@@ -18,16 +18,14 @@
 
 #endregion
 
+using com.google.javascript.jscomp;
+using java.util.logging;
 using System;
-using System.Diagnostics;
-using System.IO;
-using System.Web.Hosting;
 
 namespace Combres.Minifiers
 {
     /// <summary>
     /// JavaScript minifier which uses the Closure compiler library to minify JavaScript.
-    /// JDK must be installed in the web server in order to use this minifier.
     /// </summary>
     public sealed class LocalClosureJSMinifier : IResourceMinifier
     {
@@ -38,45 +36,80 @@ namespace Combres.Minifiers
         /// </summary>
         public string CompilationLevel { get; set; }
 
-        /// <summary>
-        /// The absolute path to the java.exe program.  This can be left empty if 
-        /// the program's folder is already included in the PATH user/system variable.
-        /// </summary>
-        public string JavaExePath { get; set; }
-
         /// <inheritdoc cref="IResourceMinifier.Minify" />
         public string Minify(Settings settings, ResourceSet resourceSet, string combinedContent)
         {
-            return Utils.UseTempFile(combinedContent, new Func<string, string>(Compile));
+            string compilationLevel = string.IsNullOrEmpty(CompilationLevel) ? "SIMPLE_OPTIMIZATIONS" : CompilationLevel;
+            Compiler compiler = null;
+            CompilerOptions options = null;
+
+            MinifyInit(ref compiler, ref options, compilationLevel);
+            return OutputMinifiedContent(compiler, options, combinedContent);
         }
 
-        private string Compile(string inputFile)
+        /// <summary>
+        /// Init Google Closure Compiler (JavaScript)
+        /// </summary>
+        /// <param name="compiler"></param>
+        /// <param name="compilerOptions"></param>
+        /// <param name="compilationLevel">"WHITESPACE_ONLY" | "SIMPLE_OPTIMIZATIONS" | "ADVANCED_OPTIMIZATIONS"</param>
+        private void MinifyInit(ref Compiler compiler, ref CompilerOptions compilerOptions, string compilationLevel)
         {
-            return Utils.UseTempFile(outputFile =>
+            try
+            {
+                compiler = new Compiler();
+                compiler.disableThreads();
+                Compiler.setLoggingLevel(Level.OFF);
+
+                compilerOptions = new CompilerOptions();
+                compilerOptions.setLineBreak(false);
+                compilerOptions.setLineLengthThreshold(524288);
+                switch (compilationLevel)
                 {
-                    const string argsTemplate = @"-jar ""{0}"" --compilation_level {1} --js ""{2}"" --js_output_file ""{3}""";
-                    string javaPath = string.IsNullOrEmpty(JavaExePath)
-                        ? "java.exe"
-                        : JavaExePath;
-                    string compilerPath = HostingEnvironment.MapPath("~/bin") + "\\compiler.jar";
-                    string compilationLevel = string.IsNullOrEmpty(CompilationLevel)
-                        ? "SIMPLE_OPTIMIZATIONS"
-                        : CompilationLevel;
-                    var args = string.Format(argsTemplate, compilerPath     /* {0} */,
-                                                           compilationLevel /* {1} */,
-                                                           inputFile        /* {2} */,
-                                                           outputFile       /* {3} */);
-                    var startInfo = new ProcessStartInfo
-                    {
-                        FileName = javaPath,
-                        Arguments = args,
-                        CreateNoWindow = true,
-                        UseShellExecute = true,
-                        WindowStyle = ProcessWindowStyle.Hidden
-                    };
-                    Process.Start(startInfo).WaitForExit();
-                    return File.ReadAllText(outputFile);
-                });
+                    case "WHITESPACE_ONLY":
+                        com.google.javascript.jscomp.CompilationLevel.WHITESPACE_ONLY.setOptionsForCompilationLevel(compilerOptions);
+                        break;
+                    case "SIMPLE_OPTIMIZATIONS":
+                        com.google.javascript.jscomp.CompilationLevel.SIMPLE_OPTIMIZATIONS.setOptionsForCompilationLevel(compilerOptions);
+                        break;
+                    case "ADVANCED_OPTIMIZATIONS":
+                        com.google.javascript.jscomp.CompilationLevel.ADVANCED_OPTIMIZATIONS.setOptionsForCompilationLevel(compilerOptions);
+                        break;
+                    default:
+                        com.google.javascript.jscomp.CompilationLevel.WHITESPACE_ONLY.setOptionsForCompilationLevel(compilerOptions);
+                        break;
+                }
+                WarningLevel.DEFAULT.setOptionsForWarningLevel(compilerOptions);
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        /// <summary>
+        /// Return minifiedContent
+        /// </summary>
+        /// <param name="compiler"></param>
+        /// <param name="compilerOptions"></param>
+        /// <param name="inputFile"></param>
+        /// <returns></returns>
+        private string OutputMinifiedContent(Compiler compiler, CompilerOptions compilerOptions, string combinedContent)
+        {
+            try
+            {
+                SourceFile @extern = SourceFile.fromCode("extern", string.Empty);
+                SourceFile input = SourceFile.fromCode("input", combinedContent);
+                Result result = compiler.compile(@extern, input, compilerOptions);
+                input.clearCachedSource();
+                input = null;
+                return result.success ? compiler.toSource() : string.Empty;
+            }
+            catch (Exception)
+            {
+                compiler = null;
+                compilerOptions = null;
+                return string.Empty;
+            }
         }
     }
 }

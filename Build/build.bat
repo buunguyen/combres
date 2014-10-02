@@ -45,15 +45,15 @@ if errorlevel 1 goto PACK_FAIL
 :VERSION
 set /P VERSION=Enter version: 
 if /i "%VERSION%"=="" goto VERSION
-set PACKAGE=combres.%VERSION%.nupkg
+set PACKAGE=Combres.%VERSION%.nupkg
 echo *** Publishing Combres package...
 nuget push %PACKAGE%
 
-set PACKAGE=combres.log4net.%VERSION%.nupkg
+set PACKAGE=Combres.Log4Net.%VERSION%.nupkg
 echo *** Publishing Combres.Log4Net package...
 nuget push %PACKAGE%
 
-set PACKAGE=combres.mvc.%VERSION%.nupkg
+set PACKAGE=Combres.Mvc.%VERSION%.nupkg
 echo *** Publishing Combres.Mvc package...
 nuget push %PACKAGE%
 goto END
