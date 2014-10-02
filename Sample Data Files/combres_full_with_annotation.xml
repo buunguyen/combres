@@ -263,4 +263,14 @@
       <resource path="~/scripts/jquery-ui-1.7.2.custom.min.js" mode="static" minifierRef="yui" />
     </resourceSet>
   </resourceSets>
+  <resourceSet name="testDemoJs" type="js" version="10" minifierRef="local-closure" debugEnabled="false">
+      <resource path="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js" mode="dynamic" forwardCookie="false" />
+      <resource path="~/scripts/jquery-ui-1.7.2.custom.min.js" mode="static" />
+    </resourceSet>
+  </resourceSets>
+  <resourceSet name="testDemoJs2" type="js" minifierRef="local-closure">
+      <resource path="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js" mode="dynamic" forwardCookie="false" />
+      <resource path="~/scripts/jquery-ui-1.7.2.custom.min.js" mode="static" minifierRef="yui" />
+    </resourceSet>
+  </resourceSets>
 </combres>
