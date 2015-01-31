@@ -58,7 +58,7 @@ That should be it. Start your browser to observe Combres in action. For more adv
 * [Annotated Combres configuration file](https://github.com/buunguyen/combres/blob/master/Samples/Sample%20Data%20Files/combres_full_with_annotation.xml)
 
 
-Change Log
+Changelog
 ---------------
 2.3.0.4
 * Built with dotless 1.4.1.0, YUICompressor.NET 2.7.0.0 and AjaxMin 5.14.5506.26202
@@ -134,8 +134,4 @@ Change Log
 
 Author
 ---------------
-Email: [buunguyen@gmail.com](mailto:buunguyen@gmail.com)  
-Blog: (www.buunguyen.net)  
-Twitter: [@buunguyen](https://twitter.com/buunguyen)  
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/buunguyen/combres/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[@buunguyen](https://twitter.com/buunguyen)  
