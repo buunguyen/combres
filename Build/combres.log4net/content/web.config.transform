@@ -1,6 +1,6 @@
 <configuration>
   <configSections>
-    <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net, Version=1.2.11, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a"/>
+    <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net" />
   </configSections>  
   <combres logProvider="Combres.Log4Net.Log4NetLogger, Combres.Log4Net" />
   <log4net>

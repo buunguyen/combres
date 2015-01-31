@@ -35,16 +35,14 @@
   <!--
     (Optional)
     Description: 
-    + Declare all CSS minifier types in this section
+    + Declare CSS minifier types in this section
     + For each minifier, fully qualified type name must be specified
-    + Each minifier may have configuration settings (specific for each minifier type)
-      Check out the documentation of each minifier to know what configuration settings it supports
+    + Each minifier has specific settings, check out its class for all properties
   -->
   <cssMinifiers>
     <minifier name="yui" type="Combres.Minifiers.YuiCssMinifier, Combres">
-      <param name="CssCompressionType" type="string" value="StockYuiCompressor" />
       <param name="RemoveComments" type="bool" value="true" />
-      <param name="ColumnWidth" type="int" value="-1" />
+      <param name="LineBreakPosition" type="int" value="-1" />
     </minifier>
     <minifier name="msajax" type="Combres.Minifiers.MSAjaxCssMinifier, Combres">
       <param name="OutputMode" type="string" value="SingleLine" />
@@ -55,24 +53,21 @@
   <!--
     (Optional)
     Description: 
-    + Declare all JavaScript minifier types in this section
+    + Declare JavaScript minifier types in this section
     + For each minifier, fully qualified type name must be specified
-    + Each minifier may have configuration settings (specific for each minifier type)
-      Check out the documentation of each minifier to know what configuration settings it supports
-    + By default, the SimpleObjectBinder is used to bind the parameters to actual properties
-      of the minifiers.  You can replace this default binder with your own implementation by 
-      specify the fully-qualified class name in the binderType attribute.
+    + Each minifier has specific settings, check out its class for all properties
   -->  
   <jsMinifiers>
     <minifier name="yui" type="Combres.Minifiers.YuiJSMinifier, Combres">
       <param name="IsVerboseLogging" type="bool" value="false" />
-      <param name="IsObfuscateJavascript" type="bool" value="true" />
+      <param name="ObfuscateJavascript" type="bool" value="true" />
       <param name="PreserveAllSemicolons" type="bool" value="false" />
       <param name="DisableOptimizations" type="bool" value="false" />
+      <param name="IgnoreEval" type="bool" value="true" />
       <param name="LineBreakPosition" type="int" value="-1" />
     </minifier>
-    <minifier name="msajax" type="Combres.Minifiers.MSAjaxJSMinifier, Combres" binderType="Combres.Binders.SimpleObjectBinder, Combres">
-      <param name="CollapseToLiteral" type="bool" value="true" />
+    <minifier name="msajax" type="Combres.Minifiers.MSAjaxJSMinifier, Combres">
+      <param name="EvalTreatment" type="string" value="MakeAllSafe" />
       <param name="MacSafariQuirks" type="bool" value="true" />
       <param name="LocalRenaming" type="string" value="CrunchAll" />
       <param name="OutputMode" type="string" value="SingleLine" />

@@ -26,11 +26,6 @@ namespace Combres.Minifiers
     public sealed class YuiCssMinifier : IResourceMinifier
     {
         /// <summary>
-        /// Either StockYuiCompressor, MichaelAshRegexEnhancements, or Hybrid.
-        /// </summary>
-        public string CssCompressionType { get; set; }
-
-        /// <summary>
         /// <p>Some source control tools don't like files containing lines longer than,
         /// say 8000 characters. The linebreak option is used in that case to split
         /// long lines after a specific column. It can also be used to make the code
@@ -39,7 +34,7 @@ namespace Combres.Minifiers
         /// 
         /// <p>Default is no line break.</p>
         /// </summary>
-        public int? ColumnWidth { get; set; }
+        public int? LineBreakPosition { get; set; }
 
         /// <summary>
         /// Whethers to remove comments from CSS.
@@ -50,13 +45,10 @@ namespace Combres.Minifiers
         /// <inheritdoc cref="IResourceMinifier.Minify" />
         public string Minify(Settings settings, ResourceSet resourceSet, string combinedContent)
         {
-            var type = (CssCompressionType)CssCompressionType.ConvertToType(
-                typeof(CssCompressionType), 
-                Yahoo.Yui.Compressor.CssCompressionType.StockYuiCompressor);
-            return CssCompressor.Compress(combinedContent, 
-                ColumnWidth == null ? -1 : ColumnWidth.Value,
-                type,
-                RemoveComments == null ? true : RemoveComments.Value);
+            var compressor = new CssCompressor();
+            compressor.LineBreakPosition = LineBreakPosition == null ? -1 : LineBreakPosition.Value;
+            compressor.RemoveComments = RemoveComments == null ? true : RemoveComments.Value;
+            return compressor.Compress(combinedContent);
         }
     }
 }

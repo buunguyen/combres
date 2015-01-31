@@ -17,14 +17,12 @@
                 remoteChangeMonitorInterval="60"
                 >
     <resourceSet name="siteCss" type="css">
+      <resource path="~/content/bootstrap.css" />
       <resource path="~/content/Site.css" />
-      <resource path="~/content/anotherCss.css" />
-      <resource path="~/scripts/yetAnotherCss.css" />
     </resourceSet>
     <resourceSet name="siteJs" type="js">
-      <resource path="~/scripts/jquery-1.4.4.js" />
-      <resource path="~/scripts/anotherJs.js" />
-      <resource path="~/scripts/yetAnotherJs.js" />
+      <resource path="~/scripts/jquery-1.10.2.js" />
+      <resource path="~/scripts/bootstrap.js" />
     </resourceSet>
   </resourceSets>
 </combres>

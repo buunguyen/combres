@@ -1,19 +1,22 @@
 Overview
 ---------------
-Combres (previously hosted in [CodePlex](http://combres.codeplex.com/)) helps your ASP.NET and ASP.NET MVC applications perform faster and rank better with [YSlow](http://developer.yahoo.com/yslow/) and [PageSpeed](https://developers.google.com/speed/pagespeed/). 
+Combres helps your ASP.NET and ASP.NET MVC applications perform faster and rank better with [YSlow](http://developer.yahoo.com/yslow/) and [PageSpeed](https://developers.google.com/speed/pagespeed/). 
 
-Features highlights:  
+Platforms:
 
-* All in one solution supporting JS/CSS [combination](http://developer.yahoo.com/performance/rules.html#num_http), [minification](http://developer.yahoo.com/performance/rules.html#minify), [compression](http://developer.yahoo.com/performance/rules.html#gzip) and caching (by adding proper [Expires/Cache-Control](http://developer.yahoo.com/performance/rules.html#expires) headers, [ETag](http://developer.yahoo.com/performance/rules.html#etags) and server-side caching)
-* Easy to use, simply download it via Nuget, declare JS and CSS resource groups in an XML file and use them in your pages, Combres will take care of the rest
-* Integrated with ASP.NET routing engine and work with ASP.NET WebForm 3.5/4.0/4.5, ASP.NET MVC 2/3/4 and Azure web applications
+* ASP.NET 3.5-4.5
+* ASP.NET MVC 2-5
+
+Features:  
+
+* One stop shop for JS/CSS [combination](http://developer.yahoo.com/performance/rules.html#num_http), [minification](http://developer.yahoo.com/performance/rules.html#minify), [compression](http://developer.yahoo.com/performance/rules.html#gzip) and caching (with [Expires/Cache-Control](http://developer.yahoo.com/performance/rules.html#expires), [ETag](http://developer.yahoo.com/performance/rules.html#etags) and server-side caching).
+* Easy to use, simply download it via NuGet, declare JS and CSS resource groups in an XML file and use them in your pages, Combres will take care of the rest.
 * Detect changes in Combres config file, managed JS/CSS files and support auto-versioning, so you don't have to manually rebundle JS/CSS resources after making changes to them
-* Extensible architecture with many extension points
+* Extensible architecture with many extension points.
 * And many more: CDN, HTTPS, debug mode, external JS/CSS (dynamically requested from other servers), Less CSS etc.
 * Proven solution with many thousands of downloads in [NuGet](https://www.nuget.org/packages/combres), [CodePlex](http://combres.codeplex.com/) and [The Code Project](http://www.codeproject.com/Articles/69484/Combres-2-0-A-Library-for-ASP-NET-Website-Optimiza)
 
 Check out [this Code Project article](http://www.codeproject.com/Articles/69484/Combres-2-0-A-Library-for-ASP-NET-Website-Optimiza) for a thorough introduction.
-
 
 
 Usage
@@ -26,7 +29,7 @@ PM> Install-Package combres.log4net (optional)
 PM> Install-Package combres.mvc (optional)
 ```
 
-Optional steps for ASP.NET 3.5 users, those using ASP.NET 4 or above can ignore:  
+Optional steps for ASP.NET 3.5 users, those using ASP.NET 4 or above can safely ignore:  
 * Delete the generated file `AppStart_Combres.cs`
 * Open `global.asax` code-behind file:
   * Import `Combres` namespace
@@ -55,10 +58,12 @@ That should be it. Start your browser to observe Combres in action. For more adv
 * [Annotated Combres configuration file](https://github.com/buunguyen/combres/blob/master/Samples/Sample%20Data%20Files/combres_full_with_annotation.xml)
 
 
-
-
 Change Log
 ---------------
+2.3.0.4
+* Built with dotless 1.4.1.0, YUICompressor.NET 2.7.0.0 and AjaxMin 5.14.5506.26202
+* Remove strong name to build with latest version of YUICompressor
+
 2.2.2.18
 * Only support .NET 4.0 or above. .NET 3.5 users should use Combres 2.2.2.17.
 * Use Fasterflect 2.1.3
@@ -83,11 +88,9 @@ Change Log
 * Fixed [missing content-type issue](http://combres.codeplex.com/discussions/245217)
 
 2.2.2.0
-
 * Support host prefix
 
 2.2.1.8  
-
 * Fix issues [7649](http://combres.codeplex.com/workitem/7649), [7650](http://combres.codeplex.com/workitem/7650), [245786](http://combres.codeplex.com/discussions/245786) and [245217](http://combres.codeplex.com/discussions/245217)
 
 2.2.1.5
@@ -136,4 +139,3 @@ Blog: (www.buunguyen.net)
 Twitter: [@buunguyen](https://twitter.com/buunguyen)  
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/buunguyen/combres/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-

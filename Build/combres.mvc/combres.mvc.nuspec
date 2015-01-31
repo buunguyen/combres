@@ -2,18 +2,18 @@
 <package> 
   <metadata> 
     <id>combres.mvc</id> 
-    <version>2.2.2.18</version> 
+    <version>2.3.0.4</version> 
 	<title>Combres.Mvc</title> 
     <authors>Buu Nguyen</authors> 
     <owners>Buu Nguyen</owners>
     <summary>MVC Extension for Combres.</summary> 
 	<description>Include extension methods for Combres to integrate more nicer with ASP.NET MVC applications.</description> 
-    <projectUrl>http://combres.codeplex.com/</projectUrl>
-    <licenseUrl>http://combres.codeplex.com/license</licenseUrl>
+    <projectUrl>https://github.com/buunguyen/combres</projectUrl>
+    <licenseUrl>https://github.com/buunguyen/combres/LICENSE</licenseUrl>
     <tags>asp.net asp.net-mvc azure closure compression minification yui yuicompressor ajaxmin dotless yslow minification performance obfuscation optimization speed</tags>
     <language>en-US</language> 
 	<dependencies>
-      <dependency id="combres" version="[2.2.2.18]" />
+      <dependency id="combres" version="[2.3.0.4]" />
     </dependencies> 
     <releaseNotes>
     </releaseNotes>

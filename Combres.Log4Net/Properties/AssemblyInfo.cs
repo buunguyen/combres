@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Buu Nguyen")]
 [assembly: AssemblyProduct("Combres.Loggers")]
-[assembly: AssemblyCopyright("Copyright © Buu Nguyen, Ken Sykora 2013")]
+[assembly: AssemblyCopyright("Copyright © Buu Nguyen, Ken Sykora 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,5 +33,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.2.2.18")]
-[assembly: AssemblyFileVersion("2.2.2.18")]
+[assembly: AssemblyVersion("2.3.0.4")]
+[assembly: AssemblyFileVersion("2.3.0.4")]

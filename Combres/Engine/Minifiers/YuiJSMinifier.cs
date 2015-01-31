@@ -32,14 +32,20 @@ namespace Combres.Minifiers
         /// <summary>
         /// Log informational messages and warnings.
         /// Default is false.
-        /// </summary>
+        /// </summary>   
         public bool? IsVerboseLogging { get; set; }
 
         /// <summary>
         /// If true, obfuscate JavaScript in addition to minification.  No obfuscation if false.
         /// Default is true.
         /// </summary>
-        public bool? IsObfuscateJavascript { get; set; }
+        public bool? ObfuscateJavascript { get; set; }
+
+        /// <summary>
+        /// If true, ignores `eval`.
+        /// Default is true.
+        /// </summary>
+        public bool? IgnoreEval { get; set; }
 
         /// <summary>
         /// Preserve unnecessary semicolons (such as right before a '}').  
@@ -67,14 +73,16 @@ namespace Combres.Minifiers
         /// <inheritdoc cref="IResourceMinifier.Minify" />
         public string Minify(Settings settings, ResourceSet resourceSet, string combinedContent)
         {
-            return JavaScriptCompressor.Compress(combinedContent,
-                IsVerboseLogging == null ? false : IsVerboseLogging.Value,
-                IsObfuscateJavascript == null ? true : IsObfuscateJavascript.Value,
-                PreserveAllSemicolons == null ? false : PreserveAllSemicolons.Value,
-                DisableOptimizations == null ? false : DisableOptimizations.Value,
-                LineBreakPosition == null ? -1 : LineBreakPosition.Value,
-                Encoding.UTF8,
-                CultureInfo.InvariantCulture);
+            var compressor = new JavaScriptCompressor();
+            compressor.Encoding = Encoding.UTF8;
+            compressor.ThreadCulture = CultureInfo.InvariantCulture;
+            compressor.LoggingType = IsVerboseLogging == true ? LoggingType.Debug : LoggingType.None;
+            compressor.PreserveAllSemicolons = PreserveAllSemicolons == null ? false : PreserveAllSemicolons.Value;
+            compressor.DisableOptimizations = DisableOptimizations == null ? false : DisableOptimizations.Value;
+            compressor.LineBreakPosition = LineBreakPosition == null ? -1 : LineBreakPosition.Value;
+            compressor.IgnoreEval = IgnoreEval == null ? true : IgnoreEval.Value;
+            compressor.ObfuscateJavascript = ObfuscateJavascript == null ? true : ObfuscateJavascript.Value;
+            return compressor.Compress(combinedContent);
         }
     }
 }

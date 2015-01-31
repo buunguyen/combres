@@ -1,4 +1,4 @@
-[assembly: WebActivator.PreApplicationStartMethod(typeof($rootnamespace$.App_Start.Combres), "PreStart")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof($rootnamespace$.App_Start.Combres), "PreStart")]
 namespace $rootnamespace$.App_Start {
 	using System.Web.Routing;
 	using global::Combres;

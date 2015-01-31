@@ -39,15 +39,9 @@ namespace Combres.Minifiers
         public bool? CollapseToLiteral { get; set; }
 
         /// <summary>
-        /// Normally an eval statement can contain anything, including references to local variables and functions. 
-        /// Because of that, if we encounter an eval statement, that scope and all parent scopes cannot take advantage 
-        /// of local variable and function renaming because things could break when the eval is evaluated and 
-        /// the references are looked up. However, sometimes the developer knows that he’s not referencing local 
-        /// variables in his eval (like when only evaluating JSON objects), and this switch can be set to true to make 
-        /// sure you get the maximum crunching. Very dangerous setting; should only be used when you are certain 
-        /// that the eval won’t be referencing local variables or functions. 
+        /// One of: Ignore, MakeImmediateSafe or MakeAllSafe.
         /// </summary>
-        public bool? EvalsAreSafe { get; set; }
+        public string EvalTreatment { get; set; }
 
         /// <summary>
         /// There was one quirk that Safari on the Mac (not the PC) needed that we were crunching out: 
@@ -60,13 +54,6 @@ namespace Combres.Minifiers
         /// Default is <c>true</c>.
         /// </summary>
         public bool? MacSafariQuirks { get; set; }
-
-        /// <summary>
-        /// Treat the catch variable as if it’s local to the function scope.  
-        /// 
-        /// Default is <c>true</c>.
-        /// </summary>
-        public bool? CatchAsLocal { get; set; }
 
         /// <summary>
         /// Renaming of locals. There are a couple settings: 
@@ -108,10 +95,16 @@ namespace Combres.Minifiers
         {
             var localRenaming = (LocalRenaming)LocalRenaming.ConvertToType(
                 typeof(LocalRenaming), Microsoft.Ajax.Utilities.LocalRenaming.CrunchAll);
+
             var outputMode = (OutputMode)OutputMode.ConvertToType(
                 typeof(OutputMode), Microsoft.Ajax.Utilities.OutputMode.SingleLine);
+
+            var evalTreatment = (EvalTreatment)EvalTreatment.ConvertToType(
+                typeof(EvalTreatment), Microsoft.Ajax.Utilities.EvalTreatment.MakeAllSafe);
+
             var codeSettings = new CodeSettings
                                    {
+                                       EvalTreatment = evalTreatment,
                                        MacSafariQuirks = MacSafariQuirks == null ? true : MacSafariQuirks.Value,
                                        CollapseToLiteral = CollapseToLiteral == null ? true : CollapseToLiteral.Value,
                                        LocalRenaming = localRenaming,

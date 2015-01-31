@@ -1,6 +1,6 @@
 <configuration>
   <configSections>
-    <section name="combres" type="Combres.ConfigSectionSetting, Combres, Version=2.2, Culture=neutral, PublicKeyToken=1ca6b37997dd7536"/>
+    <section name="combres" type="Combres.ConfigSectionSetting, Combres"/>
   </configSections>  
   <combres definitionUrl="~/App_Data/combres.xml" />
   <appSettings>
@@ -12,5 +12,8 @@
         <add namespace ="Combres" />
       </namespaces>
     </pages>  
- </system.web>
+  </system.web>
+  <system.webServer>
+    <validation validateIntegratedModeConfiguration="false"/>
+  </system.webServer>
 </configuration>
