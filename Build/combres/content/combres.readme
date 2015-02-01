@@ -1,12 +1,12 @@
-Combres makes the following changes when installing via NuGet:
+Combres has made the following changes in your project:
 * Configure web.config
 * Register route in AppStart_Combres.cs
 * Add Combres config file App_Data/combres.xml (there are 2 other files for referencing purpose)
 
-Follow these steps to finish:
-1. Modify App_Data/combres.xml to include your JS and CSS files
+Follow these steps to use Combres:
+1. Modify App_Data/combres.xml to add your JS and CSS files
 
-2. Put these in pages which need CSS/JS:
+2. Put these in pages which needs the above JS and CSS files:
    <%= WebExtensions.CombresLink("siteCss") %>  
    <%= WebExtensions.CombresLink("siteJs") %>
 

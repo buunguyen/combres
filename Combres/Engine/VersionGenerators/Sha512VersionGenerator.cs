@@ -1,5 +1,5 @@
 ﻿#region License
-// Copyright 2011 Buu Nguyen (http://www.buunguyen.net/blog)
+// Copyright 2009-2015 Buu Nguyen
 // 
 // Licensed under the Apache License, Version 2.0 (the "License"); 
 // you may not use this file except in compliance with the License. 
@@ -13,7 +13,7 @@
 // See the License for the specific language governing permissions and 
 // limitations under the License.
 // 
-// The latest version of this file can be found at http://combres.codeplex.com
+// The latest version of this file can be found at https://github.com/buunguyen/combres
 #endregion
 
 using System.Linq;

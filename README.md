@@ -55,7 +55,7 @@ ASP.NET MVC developers can import `Combres.Mvc` namespace and declare CSS/JS lik
 
 That should be it. Start your browser to observe Combres in action. For more advanced usages, refer to these resources:
 * [Combres article on The Code Project](http://www.codeproject.com/Articles/69484/Combres-2-0-A-Library-for-ASP-NET-Website-Optimiza)
-* [Annotated Combres configuration file](https://github.com/buunguyen/combres/blob/master/Samples/Sample%20Data%20Files/combres_full_with_annotation.xml)
+* [Annotated Combres configuration file](https://github.com/buunguyen/combres/blob/master/Build/combres/content/App_Data/combres_full_with_annotation.xml)
 
 
 Changelog

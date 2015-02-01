@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--
-  This file contains basic settings needed for most web apps.
-  For full Combres settings (with explanation), refer to the sample definition file: combres_full_with_annotation.xml
-  Also, refer to Combres' documentation: http://combres.codeplex.com/documentation	
+  This file contains a bare minimum setup for most web apps. Modify it to add more resource sets and resources. Refer to the project documentation and the annotated config file (combres_full_with_annotation.xml) for more information.
 -->
 <combres xmlns='urn:combres'>
   <filters>
