@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?> 
-<package> 
-  <metadata> 
-    <id>combres.log4net</id> 
-    <version>2.3.0.4</version> 
-	  <title>Combres.Log4Net</title> 
-    <authors>Buu Nguyen</authors> 
-    <owners>Buu Nguyen</owners>
-    <summary>Log4Net logging module for Combres.</summary> 
-	<description>Combres is a .NET library which minifies, compresses, combines, and caches JavaScript and CSS resources of ASP.NET and ASP.NET MVC web applications. This package contains the Log4Net adapter for Combres.</description> 
-    <projectUrl>https://github.com/buunguyen/combres</projectUrl>
-    <licenseUrl>https://github.com/buunguyen/combres/LICENSE</licenseUrl>
-    <tags>asp.net asp.net-mvc azure closure compression minification yui yuicompressor ajaxmin dotless yslow minification performance obfuscation optimization speed logging log4net</tags>
-    <language>en-US</language> 
-	<dependencies>
-      <dependency id="combres" version="[2.3.0.4]" />
-      <dependency id="log4net" version="[2.0.3]" />
-    </dependencies> 
-	<releaseNotes>
-	</releaseNotes>
-  </metadata> 
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+	<metadata>
+		<id>combres.log4net</id>
+		<version>2.3.0.4</version>
+		<title>Combres.Log4Net</title>
+		<authors>Buu Nguyen</authors>
+		<owners>Buu Nguyen</owners>
+		<summary>Log4Net logging module for Combres.</summary>
+		<description>Combres is a .NET library which minifies, compresses, combines, and caches JavaScript and CSS resources of ASP.NET and ASP.NET MVC web applications. This package contains the Log4Net adapter for Combres.</description>
+		<projectUrl>https://github.com/buunguyen/combres</projectUrl>
+		<licenseUrl>https://github.com/buunguyen/combres/LICENSE</licenseUrl>
+		<tags>asp.net asp.net-mvc azure closure compression minification yui yuicompressor ajaxmin dotless yslow minification performance obfuscation optimization speed logging log4net</tags>
+		<language>en-US</language>
+		<dependencies>
+			<dependency id="combres" version="[2.3.0.4]" />
+			<dependency id="log4net" version="[2.0.3]" />
+		</dependencies>
+		<releaseNotes>
+		</releaseNotes>
+	</metadata>
 </package>
