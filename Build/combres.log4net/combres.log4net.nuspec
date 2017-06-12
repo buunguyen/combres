@@ -13,8 +13,8 @@
 		<tags>asp.net asp.net-mvc azure closure compression minification yui yuicompressor ajaxmin dotless yslow minification performance obfuscation optimization speed logging log4net</tags>
 		<language>en-US</language>
 		<dependencies>
-			<dependency id="combres" version="[2.3.0.4]" />
-			<dependency id="log4net" version="[2.0.3]" />
+			<dependency id="combres" version="2.3.0.4" />
+			<dependency id="log4net" version="2.0.3" />
 		</dependencies>
 		<releaseNotes>
 		</releaseNotes>
