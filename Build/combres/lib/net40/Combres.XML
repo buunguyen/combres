@@ -782,7 +782,7 @@
         </member>
         <member name="P:Combres.Minifiers.MSAjaxJSMinifier.EvalTreatment">
             <summary>
-            One of: Ignore, MakeImmediateSafe or MakeAllSafe.
+            One of:營gnore, MakeImmediateSafe or MakeAllSafe.
             </summary>
         </member>
         <member name="P:Combres.Minifiers.MSAjaxJSMinifier.MacSafariQuirks">
@@ -790,9 +790,9 @@
             There was one quirk that Safari on the Mac (not the PC) needed that we were crunching out: 
             throw statements always seem to require a terminating semicolon. 
             Another Safari-specific quirk is that an if-statement only contains a function declaration, 
-            Safari will throw a syntax error if the declaration isn’t surrounded with curly-braces. 
+            Safari will throw a syntax error if the declaration isn抰 surrounded with curly-braces. 
             Basically, if you want your code to always work in Safari, set this to true. 
-            If you don’t care about Safari, it might save a few bytes. 
+            If you don抰 care about Safari, it might save a few bytes. 
             
             Default is <c>true</c>.
             </summary>
@@ -800,7 +800,7 @@
         <member name="P:Combres.Minifiers.MSAjaxJSMinifier.LocalRenaming">
             <summary>
             Renaming of locals. There are a couple settings: 
-            - KeepAll is the default and doesn’t rename variables or functions at all. 
+            - KeepAll is the default and doesn抰 rename variables or functions at all. 
             - CrunchAll renames everything it can. 
             - KeepLocalizationVars renames everything it can except for variables starting with L_. 
               Those are left as-is so localization efforts can continue on the crunched code. 
@@ -818,7 +818,7 @@
             <summary>
             Removes unreferenced local functions (not global functions, though), 
             unreferenced function parameters, quotes around object literal field names 
-            that won’t be confused with reserved words, and it does some interesting things 
+            that won抰 be confused with reserved words, and it does some interesting things 
             with switch statements.
             
             Default is <c>true</c>.
@@ -947,7 +947,7 @@
             <returns>The cached content of the resource.  If not found and <paramref name="readNewIfEmptyCache"/> is true, return
             the content from source.  Otherwise, return null.</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Combres.ResourceContentReader.ReadNewContent(Combres.Resource)" -->
+        <!-- 对于成员“M:Combres.ResourceContentReader.ReadNewContent(Combres.Resource)”忽略有格式错误的 XML 注释 -->
         <member name="M:Combres.ResourceContentReader.RemoveInCache(Combres.Resource)">
             <summary>
             Removes the cached content, if exist.
