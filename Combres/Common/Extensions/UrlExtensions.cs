@@ -68,6 +68,7 @@ namespace Combres
             if (headers["HTTP_HOST"] != null)
             {
                 var scheme = headers["HTTP_X_FORWARDED_PROTO"] ?? request.Url.Scheme;
+                scheme = scheme.Replace("\"", string.Empty);
                 return new Uri(scheme + Uri.SchemeDelimiter + headers["HTTP_HOST"]);
             }
             return request.Url;
