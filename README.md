@@ -1,3 +1,5 @@
+[![Code Shelter](https://www.codeshelter.co/static/badges/badge-flat.svg)](https://www.codeshelter.co/)
+
 Overview
 ---------------
 Combres helps your ASP.NET and ASP.NET MVC applications perform faster and rank better with [YSlow](http://developer.yahoo.com/yslow/) and [PageSpeed](https://developers.google.com/speed/pagespeed/). 
