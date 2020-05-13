@@ -1,34 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?> 
-<package> 
-  <metadata> 
-    <id>combres</id> 
-    <version>2.3.0.4</version> 
-	<title>Combres</title> 
-    <authors>Buu Nguyen</authors> 
-    <owners>Buu Nguyen</owners>
-    <summary>Performance optimization library for ASP.NET and ASP.NET MVC applications.</summary> 
-	<description>.NET library which minifies, compresses, combines, and caches JavaScript and CSS resources of ASP.NET and ASP.NET MVC web applications. Simply put, this library helps your applications rank better with YSlow and PageSpeed.</description> 
-    <projectUrl>https://github.com/buunguyen/combres</projectUrl>
-    <licenseUrl>https://github.com/buunguyen/combres/LICENSE</licenseUrl>
-    <tags>asp.net asp.net-mvc azure closure compression minification yui yuicompressor ajaxmin dotless yslow minification performance obfuscation optimization speed</tags>
-    <language>en-US</language> 
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+	<metadata>
+		<id>combres</id>
+		<version>2.3.0.4</version>
+		<title>Combres</title>
+		<authors>Buu Nguyen</authors>
+		<owners>Buu Nguyen</owners>
+		<summary>Performance optimization library for ASP.NET and ASP.NET MVC applications.</summary>
+		<description>.NET library which minifies, compresses, combines, and caches JavaScript and CSS resources of ASP.NET and ASP.NET MVC web applications. Simply put, this library helps your applications rank better with YSlow and PageSpeed.</description>
+		<projectUrl>https://github.com/buunguyen/combres</projectUrl>
+		<licenseUrl>https://github.com/buunguyen/combres/LICENSE</licenseUrl>
+		<tags>asp.net asp.net-mvc azure closure compression minification yui yuicompressor ajaxmin dotless yslow minification performance obfuscation optimization speed</tags>
+		<language>en-US</language>
 
-	<dependencies>
-		<group>
-			<dependency id="fasterflect" version="[2.1.3]" />
-			<dependency id="dotless" version="[1.4.1.0]" />
-			<dependency id="YUICompressor.NET" version="[2.7.0.0]" />
-			<dependency id="AjaxMin" version="[5.14.5506.26202]" />
-		</group>
-		<group targetFramework="net40">
-			<dependency id="fasterflect" version="[2.1.3]" />
-			<dependency id="dotless" version="[1.4.1.0]" />
-			<dependency id="YUICompressor.NET" version="[2.7.0.0]" />
-			<dependency id="AjaxMin" version="[5.14.5506.26202]" />
-			<dependency id="WebActivatorEx" version="[2.0.6]" />
-		</group>
-	</dependencies> 
-    <releaseNotes>
-    </releaseNotes>
-  </metadata> 
+		<dependencies>
+			<group>
+				<dependency id="fasterflect" version="2.1.3" />
+				<dependency id="dotless" version="1.4.1.0" />
+				<dependency id="YUICompressor.NET" version="2.7.0.0" />
+				<dependency id="AjaxMin" version="5.14.5506.26202" />
+			</group>
+			<group targetFramework="net40">
+				<dependency id="fasterflect" version="2.1.3" />
+				<dependency id="dotless" version="1.4.1.0" />
+				<dependency id="YUICompressor.NET" version="2.7.0.0" />
+				<dependency id="AjaxMin" version="5.14.5506.26202" />
+				<dependency id="WebActivatorEx" version="2.0.6" />
+			</group>
+		</dependencies>
+		<releaseNotes>
+		</releaseNotes>
+	</metadata>
 </package>
